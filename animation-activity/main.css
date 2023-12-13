@@ -10,6 +10,7 @@ body  {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .hamburger {
@@ -20,6 +21,7 @@ body  {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  transition: transform 0.3s ease;
 }
 
 .hamburger div {
@@ -28,6 +30,44 @@ body  {
   width: 70%;
   margin: auto;
 }
+
+
+@keyframes moveBurger {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(15px, 10px) rotate(45deg);
+
+  }
+}
+
+@keyframes burgerMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(15px, -10px) rotate(-45deg);
+  }
+}
+
+.hamburger:hover #middle {
+  background-color: transparent;
+  transition: 1s;
+}
+
+.hamburger:hover #top {
+  transform-origin: top left;
+  animation: moveBurger 1s linear forwards;
+}
+
+.hamburger:hover #bottom {
+  transform-origin: bottom left;
+  animation: burgerMove 1s linear forwards;
+}
+
+
+
 
 li {
   list-style-type: none;

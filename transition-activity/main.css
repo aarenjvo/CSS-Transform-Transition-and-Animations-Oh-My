@@ -15,13 +15,24 @@ img {
   width: 80%;
 }
 
+@keyframes go-button {
+}
+
 button {
+  background-color: ghostwhite;
   padding: 1em;
   margin: .2em;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5em;
+  transition: 1s ease-in-out;
+  /* cursor: pointer; */
 }
 
 button:hover {
+  color: ghostwhite;
   background-color: cornflowerblue;
+  transition: 2s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  /* animation-delay: 1s; */
 }
